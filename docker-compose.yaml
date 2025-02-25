@@ -43,6 +43,7 @@ x-common-env: &common-env
 services:
   playwright-service:
     build: apps/playwright-service-ts
+    restart: always
     environment:
       PORT: 3000
       PROXY_SERVER: ${PROXY_SERVER}
@@ -85,6 +86,7 @@ services:
     # Using Valkey with Firecrawl is untested and not guaranteed to work. Use with caution.
     image: redis:alpine
     # image: valkey/valkey:alpine
+    restart: always
 
     networks:
       - backend
