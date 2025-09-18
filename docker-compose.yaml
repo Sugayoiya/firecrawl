@@ -12,6 +12,7 @@ x-common-service: &common-service
       hard: 65535
   networks:
     - backend
+    - qnap-eldenring
   extra_hosts:
     - "host.docker.internal:host-gateway"
 
@@ -100,3 +101,5 @@ services:
 networks:
   backend:
     driver: bridge
+  qnap-eldenring:
+    external: true
